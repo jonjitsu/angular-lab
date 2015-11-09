@@ -1,1 +1,1 @@
-angular.module('app.core', ['ui.bootstrap']);
+angular.module('app.core', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule']);
