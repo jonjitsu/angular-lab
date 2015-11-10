@@ -60,9 +60,12 @@ function dataService($http, API_KEY, BASE_URL, $log) {
             get: function get(id) {
                 return makeRequest('tv/' + id);
             },
-            search: function(query) {
-                return makeRequest("search/tv", {query: query})
-                    .then(extract('results'));
+            search: function(query, page) {
+                return makeRequest("search/tv", {query: query, page:page})
+                    .then(function(data) { return data; });
+            },
+            getSeason: function(showId, seasonNumber) {
+                return makeRequest('tv/' + showId + '/season/' + seasonNumber);
             }
         };
 

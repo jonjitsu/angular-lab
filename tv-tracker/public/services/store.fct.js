@@ -3,13 +3,19 @@ angular
     .module('app.services')
     .factory('StoreFactory', dataService);
 
-function dataService(localStorageService) {
+function dataService(localStorageService, $rootScope) {
     var LS_KEY = 'shows',
         _shows = [],
 
         init = function() {
             var ls = localStorageService.get(LS_KEY);
             if( ls!==null ) _shows = ls;
+
+            $rootScope.$watch(function() {
+                return _shows;
+            }, function() {
+                save();
+            }, true); // true for deep watch
         },
 
         save = function() {
