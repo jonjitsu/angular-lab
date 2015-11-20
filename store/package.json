@@ -22,7 +22,7 @@
     "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
-    "livecoding": "",
+    "livecoding": "browser-sync start --server  --files='app/index.html,app/css/*,app/js/*'",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
