@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Template 1",
+    "description": "Nisi voluptate voluptate sit officia ullamco commodo voluptate. Ad minim quis consectetur non tempor ad dolore enim est. Veniam amet dolor laboris commodo cillum reprehenderit est culpa dolor.",
+    "type": "html5",
+    "price": 18.99,
+    "images": [
+      {
+        "name": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Template 2",
+    "description": "Veniam tempor amet est commodo aliqua nisi excepteur ea voluptate in. Sunt ut dolor consequat anim duis ad reprehenderit. Fugiat cupidatat nostrud eu nisi laboris Lorem laborum cillum consectetur mollit. Eiusmod Lorem voluptate tempor elit nostrud ad voluptate laborum velit eiusmod aliquip Lorem culpa amet. Nisi anim est tempor sunt veniam enim nulla excepteur id cillum ea. Ex dolor sit ad qui consequat velit. Velit proident in occaecat et incididunt commodo dolore velit nisi.",
+    "type": "html5",
+    "price": 9.99,
+    "images": [
+      {
+        "name": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Template 3",
+    "description": "Amet commodo quis ut excepteur non laborum commodo tempor in fugiat sunt. Aliqua est dolore velit excepteur laborum commodo magna sint mollit. Magna ex cillum adipisicing magna. Sint minim ex minim commodo et voluptate esse pariatur incididunt officia ut magna. Ullamco nisi eu cupidatat id commodo cillum mollit sunt quis officia occaecat occaecat veniam. Quis exercitation incididunt dolor aliqua consequat ullamco tempor reprehenderit adipisicing incididunt non ipsum quis Lorem. Laborum deserunt mollit cupidatat proident.",
+    "type": "html5",
+    "price": 13.99,
+    "images": [
+      {
+        "name": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Template 4",
+    "description": "Culpa tempor est ipsum eu veniam. Do tempor cillum sunt voluptate est irure excepteur esse ullamco commodo mollit anim exercitation. Id enim reprehenderit velit ut dolor sunt dolor consequat aliqua minim ullamco est sunt. Dolore cillum eiusmod ea do consectetur proident commodo aute anim consectetur nostrud sint reprehenderit. Dolor eiusmod aliquip commodo anim aute anim pariatur magna.",
+    "type": "html5",
+    "price": 19.99,
+    "images": [
+      {
+        "name": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Template 5",
+    "description": "Reprehenderit nisi enim laboris magna. Lorem est consectetur sunt esse nisi ullamco dolore aliquip eiusmod proident nulla duis anim. Mollit aliquip laboris sunt irure dolor qui ipsum aliquip. Consectetur adipisicing amet non mollit nisi ut officia irure commodo Lorem irure aliquip voluptate.",
+    "type": "html5",
+    "price": 15.99,
+    "images": [
+      {
+        "name": "http://placehold.it/32x32"
+      }
+    ]
+  }
+]

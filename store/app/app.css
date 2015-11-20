@@ -28,3 +28,20 @@
   content: "";
   padding: 0;
 }
+
+
+/* templates */
+
+.templates {
+    text-align: center; 
+}
+
+.templates img {
+    width: 70%; height: auto;
+}
+
+.templates a {
+    width: 50%;
+    text-align: center;
+    margin-left: auto; margin-right: auto;  
+}
