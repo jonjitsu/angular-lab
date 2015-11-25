@@ -1,6 +1,6 @@
 {
   "name": "addressbook",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
     "Jonathan Willis <jonathanwillis@linux.com>"
   ],
@@ -11,5 +11,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "mocha": "~2.3.4",
+    "chai": "~3.4.2"
+  }
 }
