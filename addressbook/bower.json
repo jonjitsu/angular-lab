@@ -1,0 +1,15 @@
+{
+  "name": "addressbook",
+  "version": "0.0.0",
+  "authors": [
+    "Jonathan Willis <jonathanwillis@linux.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
