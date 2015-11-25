@@ -1,8 +1,15 @@
 var gulp = require('gulp'),
-    bs = require('browser-sync')
+    bs = require('browser-sync'),
+    karma = require('karma').server,
+    server = require('gulp-live-server')
 ;
 
-gulp.task('serve', function() {
+gulp.task('server', function() {
+    var live = new server('server.js');
+    live.start();
+})
+
+gulp.task('serve', ['server'], function() {
     bs.init({
         notify: false,
         port: 8080,
@@ -33,3 +40,12 @@ gulp.task('serve-test', function() {
     gulp.watch(['app/**/*.*', 'test/**/*.js'])
         .on('change', bs.reload);
 });
+
+gulp.task('test-browser', function() {
+    karma.start({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true,
+        reporters: ['mocha']
+    })
+});
+
