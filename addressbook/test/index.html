@@ -2,17 +2,18 @@
     <head>
         <title>Mocha Spec Runner</title>
         <link href="bower_components/mocha/mocha.css" rel="stylesheet"/>
+        <script src="bower_components/lodash/lodash.js"></script>
         <script src="bower_components/angular/angular.js"></script>
     </head>
     <body ng-app="AddressBook">
-        <div id="mocha">
+        <div id="mocha"></div>
             <script src="bower_components/mocha/mocha.js"></script>
             <script src="bower_components/chai/chai.js"></script>
             <script>
              mocha.setup('bdd');
             </script>
+            <script src="bower_components/angular-mocks/angular-mocks.js"></script>
 
-        </div>
 
         <!-- -->
         <script src="main.js"></script>
