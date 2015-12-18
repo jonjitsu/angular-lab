@@ -13,6 +13,27 @@
             </div>
         </div>
 
+        <div ng-controller="AddContactController">
+            <form ng-submit="addContact()">
+                <h3>Add A new contact</h3>
+                <label for="">Name
+                    <input required type="text" ng-model="contact.name"/>
+                </label>
+                <label for="occupation">
+                    Occupation
+                    <input type="text" ng-model="contact.occupation" />
+                </label>
+                <label for="">Email
+                    <input name="" type="text" value="" required ng-model="contact.email"/>
+                </label>
+                <label for="">Add
+                    <input type="submit" id="submitNewContact" />
+                </label>
+                <div class="warning" ng-if="errorMessage">
+                    Error try again
+                </div>        
+            </form>
+        </div>
         <!-- -->
         <script src="main.js"></script>
     </body>

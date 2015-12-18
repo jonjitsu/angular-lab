@@ -4,6 +4,7 @@ angular
     .service('ContactService', ['$http', 'CONTACTS_URL', ContactService])
     .factory('ContactStore', ['$http', 'CONTACTS_URL', ContactStore])
     .controller('ContactController', ['ContactService', 'ContactStore', '$scope', ContactController])
+    .controller('AddContactController', ['ContactStore', '$scope', AddContactController])
     .filter('proper', function() {
         return function(name) {
             var type = typeof name;
@@ -37,8 +38,19 @@ function ContactService($http, CONTACTS_URL) {
             console.log(res);
             var data = res.data;
             while(data[0]) service.contacts.push(data.pop());
-            //service.contacts = res.data;
+            //service.contacts = res.data
         });
+}
+
+function AddContactController(ContactStore, $scope) {
+    var vm = $scope;
+
+    vm.addContact = function() {
+        ContactStore.add(vm.contact);
+        vm.contact.name='';
+        vm.contact.occupation='';
+        vm.contact.email='';
+    }
 }
 
 function ContactController(ContactService, ContactStore, $scope) {
@@ -53,11 +65,19 @@ function ContactController(ContactService, ContactStore, $scope) {
 }
 
 function ContactStore($http, CONTACTS_URL) {
+
     return {
+        _contacts: [],
         all: function() {
-            return $http
+            this._contacts = $http
                 .get(CONTACTS_URL)
                 .then(_.property('data'))
+            return this._contacts;
+        },
+        add: function(contact) {
+            console.log(this, contact);
+            this._contacts.push(Object.assign({}, contact));
+            // @TODO send to server.
         }
     };
 }

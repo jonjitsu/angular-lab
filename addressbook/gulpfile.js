@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     bs = require('browser-sync'),
     karma = require('karma').server,
-    server = require('gulp-live-server')
+    server = require('gulp-live-server'),
+    protractor = require('gulp-protractor').protractor
 ;
 
 gulp.task('server', function() {
@@ -53,6 +54,15 @@ gulp.task('serve-test', function() {
 
     gulp.watch(['app/**/*.*', 'test/**/*.js'])
         .on('change', bs.reload);
+});
+
+gulp.task('protractor', ['serve'], function(done) {
+    gulp.src(['test/e2e/*.js'])
+        .pipe(protractor({
+            configFile: 'test/protractor.config.js',
+            args: ['--baseUrl', 'http://localhost:8081']
+        }))
+        .on('end', done);
 });
 
 gulp.task('test-browser', function() {

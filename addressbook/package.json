@@ -20,12 +20,16 @@
     "karma-phantomjs-launcher": "~0.2.1",
     "karma-coverage": "~0.5.3",
     "istanbul": "~0.4.1",
-    "karma-mocha-reporter": "~1.1.2"
+    "karma-mocha-reporter": "~1.1.2",
+    "karma-cli": "~0.1.1",
+    "webdriver-manager": "~7.0.1",
+    "protractor": "~2.5.0"
   },
   "dependencies": {
-    "gulp": "~3.9.0",
+    "cors": "~2.7.1",
     "express": "~4.13.3",
+    "gulp": "~3.9.0",
     "gulp-live-server": "0.0.29",
-    "cors": "~2.7.1"
+    "gulp-protractor": "^1.0.0"
   }
 }
