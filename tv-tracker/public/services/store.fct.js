@@ -33,6 +33,7 @@ function dataService(localStorageService, $rootScope) {
                 save();
             },
             getShow: function(id) {
+                id = parseInt(id, 10);
                 for (var i=0; i<_shows.length; i++) {
                     if( _shows[i].id===id) return _shows[i];
                 }

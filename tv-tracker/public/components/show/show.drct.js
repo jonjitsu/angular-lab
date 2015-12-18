@@ -9,7 +9,8 @@ function ShowOverviewDirective(StoreFactory) {
         restrict: 'E',
         scope: {
             show: '=',
-            showRating: '='
+            showRating: '=',
+            showDiary: '='
         },
         controller: function($scope) {
             var vm = $scope;
