@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head></head>
+    <body ng-app="app">
+        <!-- Controller as -->
+
+        <div ng-controller="Main2Ctrl as ctrl">
+            <p>Primitive: {{ctrl.primitive}}</p>
+            <p>Object: {{ctrl.object.value}}</p>
+            <p>Main: 
+                <button ng-click="ctrl.primitive = (ctrl.primitive + 1)">Update Primitive</button>
+                <button ng-click="ctrl.object.value = (ctrl.object.value + 1)">Update Object</button>
+            </p>
+            <p ng-controller="Sub2Ctrl">Sub:
+                <button ng-click="ctrl.primitive = (ctrl.primitive + 1)">Update Primitive</button>
+                <button ng-click="ctrl.object.value = (ctrl.object.value + 1)">Update Object</button>
+            </p>
+        </div>
+        
+        <script src="vendor/angular/angular.js"></script>
+        <script type="text/javascript">
+         /* primitives vs objects in scoping */
+angular
+    .module('app', [])
+    .controller('Main2Ctrl', function() {
+             var vm = this;
+        vm.primitive = 123;
+        vm.object = {
+            value: 123
+        };
+    })
+    .controller('Sub2Ctrl', function() {
+        
+    }); 
+        </script>
+    </body>
+</html>

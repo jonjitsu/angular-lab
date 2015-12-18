@@ -1,0 +1,99 @@
+<div class="row" ng-controller="ContactsCtrl">
+
+    <div class="large-10 columns" >
+        <div ng-show="msg" class="alert-box" data-alert>
+            {{msg}}
+        </div>
+    <form ng-show="addFormShow">
+        <h3>Add Contact</h3>
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Name:
+                    <input type="text" ng-model="name" value=""/>
+                </label>
+            </div>
+            <div class="large-6 columns">
+                <label for="">Email:
+                    <input type="text" ng-model="email" value=""/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label for="">Company:
+                    <input type="text" ng-model="company" value=""/>
+                </label>
+            </div>
+            <div class="large-6 columns">
+                <label for="">Work Phone:
+                    <input type="text" ng-model="work_phone" value=""/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label for="">Mobile Phone:
+                    <input type="text" ng-model="mobile_phone" value=""/>
+                </label>
+            </div>
+            <div class="large-6 columns">
+                <label for="">Home Phone:
+                    <input type="text" ng-model="home_phone" value=""/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label for="">
+                    <input name="" type="text" value=""/>
+                </label>
+            </div>
+            <div class="large-6 columns">
+                <label for="">
+                    <input name="" type="text" value=""/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label for="">
+                    <input name="" type="text" value=""/>
+                </label>
+            </div>
+            <div class="large-6 columns">
+                <label for="">
+                    <input name="" type="text" value=""/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+        <a ng-click="hideAddForm()">back</a>
+        <a class="button large" ng-click="addContact()">Add</a>
+        </div>
+    </form>
+    <div ng-hide="addFormShow">
+        <h3>Your contacts</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th width="25%">Name</th>
+                    <th width="25%">Company</th>
+                    <th width="25%">Email</th>
+                    <th width="25%">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td><a href="">{{contact.name}}</a></td>
+                    <td>{{contact.company}}</td>
+                    <td>{{contact.email}}</td>
+                    <td><a class="button tiny" ng-click="showEditForm(contact)">Edit</a><a class="button tiny alert" ng-click="removeContact(contact)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <div class="small-12 large-2 columns">
+        <a class="button large" ng-click="showAddForm()">+</a>
+    </div>
+</div>

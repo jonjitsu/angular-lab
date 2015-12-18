@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head></head>
+    <body ng-app="app">
+
+        <div ng-controller="MainCtrl">
+            <p>Primitive: {{primitive}}</p>
+            <p>Object: {{object.value}}</p>
+            <p>Main: 
+                <button ng-click="primitive = (primitive + 1)">Update Primitive</button>
+                <button ng-click="object.value = (object.value + 1)">Update Object</button>
+            </p>
+            <p ng-controller="SubCtrl">Sub:
+                <button ng-click="primitive = (primitive + 1)">Update Primitive</button>
+                <button ng-click="object.value = (object.value + 1)">Update Object</button>
+            </p>
+        </div>
+        <script src="vendor/angular/angular.min.js"></script>
+        <script type="text/javascript">
+         /* primitives vs objects in scoping */
+angular
+    .module('app', [])
+    .controller('MainCtrl', function($scope) {
+        $scope.primitive = 123;
+        $scope.object = {
+            value: 123
+        };
+    })
+    .controller('SubCtrl', function($scope) {
+        
+    });
+        </script>
+    </body>
+</html>
