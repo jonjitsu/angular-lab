@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+C_JS="
+angular
+    .module('app.core')
+    .directive('changeme', Directive);
+
+function Directive(StoreFactory) {
+    return {
+        templateUrl: 'components/tpl.html',
+        restrict: 'E',
+        scope: {
+            myAttribute: '='
+        },
+        controller: function($scope) {
+            var vm = $scope;
+        }
+    };
+}
+"
+C_CSS=''
+C_HTML='<p>New component</p>'
+
+error() {
+    echo "$@"
+    exit 1
+}
+
+usage() {
+    error "$(basename "$0") <directive-name>"
+}
+
+
+mk-directive() {
+    local dir
+
+    dir="public/components/$1"
+    mkdir -p "$dir"
+
+    echo "$C_HTML" > "$dir"/"$1".tpl.html
+    echo "$C_CSS" > "$dir"/"$1".css
+    echo "$C_JS" > "$dir"/"$1".drct.js
+
+}
+
+main() {
+    if [[ -z $1 ]]; then
+        usage
+    fi
+
+    if [[ ! -d public ]]; then
+        error "Can't find public/ dir."
+    fi
+
+    mk-directive "$1"
+}
+
+main "$@"
